@@ -6,7 +6,7 @@ const PrimaryInput = (props : any) => {
 
     }
 return(
-    <input onChange={handleUserInput} placeholder={props.placeholder} style={{width: 350, height:45, background:'#fff', outlineWidth:0, paddingLeft:20, borderRadius:5, border:0}}/>
+    <input onChange={handleUserInput} placeholder={props.placeholder} style={{minWidth: 250, height:40, background:'#fff', outlineWidth:0, paddingLeft:20, borderRadius:5, border:0}}/>
 )
 }
 export default PrimaryInput;

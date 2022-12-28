@@ -6,16 +6,18 @@ import PrimaryInput from "../inputs/primaryInput";
 const LoginForm = () => {
     return (
         <Form>
-            <FormGroup className="m-3">
+            
+            <FormGroup className="d-flex m-3 justify-content-center">
                 <PrimaryInput placeholder={'Username'} />
             </FormGroup >
-            <FormGroup className="m-3 mb-5">
+            <FormGroup className="d-flex m-3 justify-content-center">
                 <PrimaryInput placeholder={'Password'} />
-                <p className="mt-2" style={{color:'#FF8B8B'}}>{}</p>
+                <p className="mt-2" style={{ color: '#FF8B8B' }}>{ }</p>
             </FormGroup >
             <FormGroup className="d-flex m-3 justify-content-center">
                 <PrimaryButton>Login</PrimaryButton>
             </FormGroup >
+           
         </Form>
     )
 }

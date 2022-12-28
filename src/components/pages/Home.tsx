@@ -17,17 +17,19 @@ const Home = () => {
             <Container className={`${homeStyle.left}`}></Container>
             <Container className={`${homeStyle.right} p-2`}>
                 <Row className={`${homeStyle.logoSection}`}>
-                    <img src={logo} height={150} />
+                    <Col>
+                        <img src={logo} height={150} />
+                    </Col>
+
                 </Row>
-                <Row>
+                <Row  >
                     <LoginForm />
                 </Row>
                 <Row className="text-light"><p>Forgot Password?</p></Row>
                 <Row className="text-light mt-4 w-75">
-                    <Col className="d-flex m-3 justify-content-center w-75">
+                    <Col className="d-flex m-3 justify-content-center w-100">
                         <p className="p-1">Not registered?</p>
-
-                        <Link to={'/signup'} style={{textDecoration:'none', cursor:'pointer'}}><p className="p-1" style={{ color: '#E79C3D' }}>Signup</p></Link>
+                        <Link to={'/signup'} style={{ textDecoration: 'none', cursor: 'pointer' }}><p className="p-1" style={{ color: '#E79C3D' }}>Signup</p></Link>
                     </Col>
                 </Row>
             </Container>
