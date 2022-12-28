@@ -7,10 +7,7 @@ import { Link } from "react-router-dom";
 import LoginForm from "../forms/loginForm"
 
 const Home = () => {
-    const formik = useFormik({
-        initialValues: { username: '', password: '' },
-        onSubmit: (value) => { console.log(value) }
-    })
+   
 
     return (
         <Container fluid className="min-vh-100 p-0 d-flex">
@@ -29,7 +26,7 @@ const Home = () => {
                 <Row className="text-light mt-4 w-75">
                     <Col className="d-flex m-3 justify-content-center w-100">
                         <p className="p-1">Not registered?</p>
-                        <Link to={'/signup'} style={{ textDecoration: 'none', cursor: 'pointer' }}><p className="p-1" style={{ color: '#E79C3D' }}>Signup</p></Link>
+                        <Link to={'/signup'} style={{ textDecoration: 'none', cursor: 'pointer' }}><p className="p-1" style={{ color: '#E79C3D' }}>Register</p></Link>
                     </Col>
                 </Row>
             </Container>
