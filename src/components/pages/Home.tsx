@@ -18,8 +18,10 @@ const Home = () => {
                         <img src={logo} height={150} />
                     </Col>
                 </Row>
-                <Row className="w-75">
+                <Row className="w-100 d-flex justify-content-center">
+                    <Col xs={8} className="d-flex justify-content-center">
                     <LoginForm />
+                    </Col>
                 </Row>
                 <Row className="text-light"><p className="size-small" style={{ fontSize: 12 }}>Forgot Password?</p></Row>
                 <Row className="text-light mt-1 w-75">
