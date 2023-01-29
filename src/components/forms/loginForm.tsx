@@ -1,12 +1,17 @@
-import React from "react";
-import { Alert, Form, FormGroup } from "react-bootstrap";
+import React, { useState } from "react";
+import { Alert, Button, Col, Form, FormGroup, Row } from "react-bootstrap";
+import { Input, InputGroup, SelectPicker } from "rsuite";
 import PrimaryButton from "../buttons/PrimaryButton";
 import PrimaryInput from "../inputs/primaryInput";
 import { useFormik } from "formik";
 import * as yup from 'yup';
+import { useLocation, useNavigate } from "react-router-dom";
+import loginS from './login.module.css';
 
 const LoginForm = () => {
-    
+    const [showPassword, setShowPassword] = useState(false)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues: { username: '', password: '' },
@@ -14,31 +19,29 @@ const LoginForm = () => {
         onSubmit: (value) => handleLogin(value)
     })
 
-    const user = { validName: 'ade', validPassword: 'tola' }
-
     const handleLogin = (val: any) => {
-        if (user.validName === val.username && user.validPassword === val.password) {
-            console.log('Log In Succesful')
-        } 
-        else alert('Not a registered User')
+
+        console.log(val)
 
     }
 
     return (
-        <Form>
-
-            <FormGroup className="d-flex m-3 justify-content-center">
-                <PrimaryInput handleChange={formik.handleChange} name={'username'} inputValue={formik.values.username} placeholder={'Username'} />
-            </FormGroup >
-            <FormGroup className="d-flex m-3 justify-content-center">
-                <PrimaryInput handleChange={formik.handleChange} name={'password'} placeholder={'Password'} />
-                <p className="mt-2" style={{ color: '#FF8B8B' }}>{ }</p>
-            </FormGroup >
-            <FormGroup className="d-flex m-3 justify-content-center">
-                <PrimaryButton onClick={formik.handleSubmit}>Login</PrimaryButton>
-            </FormGroup >
-
-        </Form>
+        <Row className="w-100 d-flex justify-content-center">
+            <Form>
+                <Col className="d-flex py-4 flex-column">
+                    <InputGroup className={`w-100 mt-3 d-flex rounded-1 bg-light text-dark align-items-center px-2 ${loginS.textField }`}>
+                        <i className="bi bi-person-fill"></i>
+                        <Input onChange={()=>formik.handleChange} placeholder="Username" name="username" className="p-2 border-0 w-75  outline-0" />
+                    </InputGroup>
+                    <InputGroup className={`w-100 mt-4 d-flex rounded-1 bg-light text-dark align-items-center px-2 ${loginS.textField }`}>
+                        <i className="bi bi-lock-fill"></i>
+                        <Input onChange={()=>formik.handleChange} name="password" type={showPassword ? 'text' : 'password'} placeholder="Password" className="w-75 p-2 border-0 outline-0" />
+                        <i className={showPassword ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"} style={{ cursor: 'pointer', marginLeft: 30 }} onClick={() => setShowPassword(!showPassword)}></i>
+                    </InputGroup>
+                    <Button className="text-dark mt-4 px-4 border-0" type="submit" onClick={(e) => {formik.handleSubmit(); e.preventDefault()}} style={{ backgroundColor: '#E79C3D', fontWeight: '600' }}>Login</Button>
+                </Col>
+            </Form>
+        </Row>
     )
 }
 
