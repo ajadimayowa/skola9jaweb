@@ -3,8 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { Col, Container, Row, Form, FormLabel, FormGroup, FormControl, Button, FormSelect } from "react-bootstrap";
 import signUpStyle from './css/signup.module.css';
 import logo from '../../assets/images/logo.png';
+import signUpImage from '../../assets/images/signup-image.png'
 import { Formik } from "formik";
-import { Input, InputGroup, SelectPicker } from "rsuite";
+import { Input, InputGroup, SelectPicker, Checkbox, CheckboxGroup } from "rsuite";
 import { ArrowRight, BarChartLineFill } from "react-bootstrap-icons";
 
 
@@ -18,8 +19,8 @@ const SignUp = () => {
     return (
         <Container fluid className="bg-primary">
             <Row className={`center ${signUpStyle.container}`}>
-                <Col className="bg-secondary">
-                    a
+                <Col className={`min-vh-100 p-0 ${signUpStyle.left}`}>
+
                 </Col>
                 <Col className={`d-flex w-100 min-vh-100 p-3 pt-4 gap-2 flex-column px-4   align-items-center ${signUpStyle.right}`}>
                     <Row className="mt-4 mb-4">
@@ -55,15 +56,20 @@ const SignUp = () => {
                                 <i className={showPassword ? "bi bi-eye-slash-fill" : "bi bi-eye-fill"} style={{ cursor: 'pointer' }} onClick={() => setShowPassword(!showPassword)}></i>
                             </InputGroup>
                             <InputGroup className={`w-100 mt-4 d-flex rounded-1 bg-light text-dark align-items-center px-2 mb-4 ${signUpStyle.textField}`}>
-                                
+
                                 <FormSelect className="outline-0 border-0 px-0 w-25 ml-4">
-                                    <option selected value="234">+234</option>
+                                    <option value="234">+234</option>
                                     <option value="1">+1</option>
                                     <option value="44">+44</option>
                                 </FormSelect>
                                 <Input placeholder="Phone Number" className="w-100 p-2 border-0 outline-0" />
-
                             </InputGroup>
+
+                            <CheckboxGroup style={{color:'#E79C3D', marginLeft:35}} className={`w-100  mt-2 d-flex justify-content-center text-light px-2 ${signUpStyle.checkField}`}>
+                                <Checkbox style={{marginRight:5}} />
+                                I accept the
+                                <p className="w-50 p-0" style={{ marginLeft: 5,color: '#E79C3D', cursor: 'pointer' }}>terms and conditions</p>
+                                </CheckboxGroup>
 
 
                             <Button className="text-dark mt-4 px-4 border-0" type="submit" style={{ backgroundColor: '#E79C3D', fontWeight: '600' }}>Create Account</Button>
@@ -76,7 +82,6 @@ const SignUp = () => {
 
                         </Form>
                     </Row>
-                    <Row className="mt-4 w-100 bg-secondary">z</Row>
                 </Col>
             </Row>
         </Container>
