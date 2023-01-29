@@ -19,6 +19,10 @@
     outline:none;
 }
 
+.row .btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
 
 @media (max-width : 576px) {
     .container {

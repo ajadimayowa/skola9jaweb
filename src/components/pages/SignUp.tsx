@@ -27,7 +27,7 @@ const SignUp = () => {
                         <img src={logo} height={150} />
                     </Row>
                     <Row className="d-flex justify-content-center mt-4 w-100">
-                        <Form className="d-flex flex-column text-light justify-content-center align-items-center py-4  border border-1 w-100 border-light" style={{ paddingTop: 30, padding: 50 }}>
+                        <Form className={`d-flex flex-column text-light justify-content-center align-items-center py-4  border border-1 w-100 border-light ${signUpStyle.row}`} style={{ paddingTop: 30, padding: 50 }}>
                             <h3 style={{ fontWeight: '700' }}>Create Your account</h3>
                             <FormGroup className="d-flex flex-row gap-2 mt-4">
                                 <InputGroup className={`d-flex gap-2 align-items-center text-dark px-2 w-50 rounded-1 bg-light ${signUpStyle.textField}`}>
@@ -72,7 +72,7 @@ const SignUp = () => {
                                 </CheckboxGroup>
 
 
-                            <Button className="text-dark mt-4 px-4 border-0" type="submit" style={{ backgroundColor: '#E79C3D', fontWeight: '600' }}>Create Account</Button>
+                            <Button className={`text-dark mt-4 px-4 border-0 outline-0 shadow-none ${signUpStyle.btn}`} type="submit" style={{ backgroundColor: '#E79C3D', fontWeight: '600' }}>Create Account</Button>
                             <Row className="ml-4 d-flex w-100 justify-content-center  mt-4" style={{ paddingLeft: 35, fontSize: 14 }}>
                                 Already have an account?
                                 <p onClick={() => navigate('/')} className="w-25 p-0" style={{ marginLeft: 4, textDecoration: 'none', color: '#E79C3D', cursor: 'pointer' }}>Login</p>
