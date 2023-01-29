@@ -1,0 +1,31 @@
+.checkboxWrapper {
+  background-color: pink;
+  border: 1px solid red;
+  height: 100px;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  border: 1px solid red;
+  height: 50px;
+  width: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="checkbox"]:checked {
+  font-family: "Font awesome 5 free";
+  content: "\f00c";
+  appearance: none;
+  border: 1px solid rgb(37, 205, 107);
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
